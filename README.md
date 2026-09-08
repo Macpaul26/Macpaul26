@@ -1,23 +1,36 @@
 <div align="center">
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Macpaul26/Macpaul26/main/assets/monogram-dark.svg">
+  <img src="https://raw.githubusercontent.com/Macpaul26/Macpaul26/main/assets/monogram-light.svg" alt="Macpaul Appiah-Adu monogram" width="76" height="76">
+</picture>
+
 # Macpaul Noble Appiah-Adu
 
-<samp>SOFTWARE&nbsp;ENGINEER&nbsp;&nbsp;·&nbsp;&nbsp;AI&nbsp;SYSTEMS&nbsp;&nbsp;·&nbsp;&nbsp;INTERFACE&nbsp;DESIGN</samp>
+<samp>SOFTWARE&nbsp;ENGINEER</samp>
+
+**I build software that holds up.**
+
+Clear architecture, typed boundaries, tested behaviour,<br>
+and interfaces that stay out of the way.
+
+<a href="https://github.com/Macpaul26?tab=repositories"><img src="https://raw.githubusercontent.com/Macpaul26/Macpaul26/main/assets/icons/brackets.svg" width="15" alt=""> Repositories</a>
+&nbsp;&nbsp;·&nbsp;&nbsp;
+<a href="https://www.linkedin.com/in/macpaul-appiah-adu-9a73ab35a"><img src="https://raw.githubusercontent.com/Macpaul26/Macpaul26/main/assets/icons/linkedin.svg" width="15" alt=""> LinkedIn</a>
+&nbsp;&nbsp;·&nbsp;&nbsp;
+<a href="mailto:mappiahadu@gmail.com"><img src="https://raw.githubusercontent.com/Macpaul26/Macpaul26/main/assets/icons/mail.svg" width="15" alt=""> Email</a>
 
 <br>
 
-**I build systems that verify their own work.**
-
-Most of my time goes to an AI development orchestrator that plans, gates on human
-approval, delegates the work — then inspects the repository itself rather than
-trusting the report it was handed.
+<img src="https://raw.githubusercontent.com/Macpaul26/Macpaul26/main/assets/icons/layers.svg" width="15" alt=""> Architecture
+&nbsp;&nbsp;&nbsp;
+<img src="https://raw.githubusercontent.com/Macpaul26/Macpaul26/main/assets/icons/shield.svg" width="15" alt=""> Reliability
+&nbsp;&nbsp;&nbsp;
+<img src="https://raw.githubusercontent.com/Macpaul26/Macpaul26/main/assets/icons/window.svg" width="15" alt=""> Interface
+&nbsp;&nbsp;&nbsp;
+<img src="https://raw.githubusercontent.com/Macpaul26/Macpaul26/main/assets/icons/terminal.svg" width="15" alt=""> Tooling
 
 <br>
-
-[**dev-orchestrator**](https://github.com/Macpaul26/dev-orchestrator) &nbsp;·&nbsp;
-[**Repositories**](https://github.com/Macpaul26?tab=repositories) &nbsp;·&nbsp;
-[**LinkedIn**](https://www.linkedin.com/in/macpaul-appiah-adu-9a73ab35a) &nbsp;·&nbsp;
-[**Email**](mailto:mappiahadu@gmail.com)
 
 <sub>Computer Science · University of Ghana, Legon</sub>
 
@@ -25,141 +38,110 @@ trusting the report it was handed.
 
 ---
 
-## 01 · What I build
+<div align="center">
 
-I work where AI systems meet real software engineering. The interesting problem there
-isn't getting a model to produce code — it's deciding what to trust once it has.
+<sub><b>FEATURED PROJECT</b></sub>
 
-That question shapes how I build everything else: typed boundaries, narrow capabilities,
-tests that describe guarantees rather than implementations, and interfaces quiet enough
-that people actually use them.
+## dev-orchestrator
 
-Three things hold my attention — **agent architecture and verification**, **full-stack
-TypeScript**, and **the design layer** that most engineers skip.
+**Development work, coordinated across projects — planned, approved by a human,<br>then verified against what the repository actually shows.**
 
----
+</div>
 
-## 02 · Flagship
+<table>
+<tr>
+<td align="center" width="33%">
+<img src="https://raw.githubusercontent.com/Macpaul26/Macpaul26/main/assets/icons/lock.svg" width="22" alt="">
+<br><br>
+<sub><b>CONTROLLED EXECUTION</b></sub>
+<br>
+<sub>Four typed, grant-bound operations. Never a raw filesystem API.</sub>
+</td>
+<td align="center" width="33%">
+<img src="https://raw.githubusercontent.com/Macpaul26/Macpaul26/main/assets/icons/verify.svg" width="22" alt="">
+<br><br>
+<sub><b>INDEPENDENT VERIFICATION</b></sub>
+<br>
+<sub>Git state read first-hand. Claims kept structurally apart from observations.</sub>
+</td>
+<td align="center" width="33%">
+<img src="https://raw.githubusercontent.com/Macpaul26/Macpaul26/main/assets/icons/flow.svg" width="22" alt="">
+<br><br>
+<sub><b>DURABLE WORKFLOW</b></sub>
+<br>
+<sub>Runs suspend at an approval and resume from checkpointed state.</sub>
+</td>
+</tr>
+</table>
 
-### dev-orchestrator
+A `dev-agent` CLI drives it: register a project, start a run, and the workflow
+executes until it suspends for a human decision. Nothing consequential happens
+without that decision.
 
-**A general-purpose AI development orchestrator that never takes an agent's word for it.**
+The design rule the whole system is built around — *a coding agent's report is
+never authoritative.* `ImplementationReport` carries `claimed` and `observed`
+fields separately, and no code path can write one into the other.
 
-> The coding agent's report is never authoritative.
+<sub><b>Selected engineering</b></sub>
 
-It loads project context, plans, gates on human approval, delegates implementation to a
-coding agent, and then establishes for itself what changed. An agent reporting success is
-producing a *claim*, not evidence — so the two are kept structurally apart:
-`ImplementationReport` carries `claimed*` and `observed*` fields, and there is no code
-path that writes a claim into an observation.
+- A capability boundary the agent cannot talk its way past — the request protocol
+  has no field for a grant, project, scope or budget
+- Tamper-evident, project-isolated storage that refuses corrupt or misfiled records on read
+- A write quota that holds under concurrent writers, via a cross-process lock
 
-**What I built**
+<sub><b>Built with</b></sub>&nbsp;&nbsp;TypeScript (strict) · Node 22 · LangGraph · Zod · Vitest · SQLite
 
-- **A controlled tool bridge.** The coding agent touches a repository only through four
-  typed, grant-bound operations — never a raw filesystem API. The request protocol has no
-  field for a grant, project, session, scope or budget, so authority is not something the
-  agent can name.
-- **Read-only repository evidence.** Metadata, status, changed paths and bounded file
-  excerpts, exposed through a closed set of operations rather than open access.
-- **Tamper-evident experience storage.** Project-isolated records that survive a restart,
-  are ordered and paged from filenames rather than by parsing the whole corpus, and are
-  refused on read if corrupt or filed under the wrong project.
-- **A quota that holds under concurrent writers.** Writes serialize through a
-  cross-process lock and the count is derived from the records inside that lock — a
-  directory too large to scan completely refuses the write instead of trusting a partial
-  count.
+<sub>31 test suites · 16 source modules · 13 phase documents</sub>
 
-**Stack** — TypeScript (strict) · Node 22 · LangGraph · Anthropic SDK · Zod · Vitest · SQLite checkpointing
-
-<sub>31 test suites · 16 source modules · 13 phase documents · ships as a <code>dev-agent</code> CLI</sub>
-
-[**View repository →**](https://github.com/Macpaul26/dev-orchestrator)
-
----
-
-## 03 · Selected work
-
-### Newbreed — campus ministry website
-
-An editorial site for the ICGC campus ministry at the University of Ghana, built around a
-content-integrity policy: the site is not allowed to claim something the church hasn't
-said. Routed React app with a real design system rather than component defaults.
-
-<sub>React · Vite · TypeScript · Tailwind · Radix UI · TanStack Query · Framer Motion · Playwright · Vitest &nbsp;—&nbsp; **private repository**</sub>
-
-### God-man Classics — storefront and admin
-
-A commerce project on TanStack Start with Supabase behind it — catalogue, cart, and an
-admin surface for managing stock.
-
-<sub>TanStack Start · Supabase · Tailwind v4 · Radix UI · TypeScript &nbsp;—&nbsp; **private repository**</sub>
-
-### Ghana Smart Service Operations Optimizer
-
-Campus maintenance triage over a real SQLite database — 56 locations, 140 roads, 320
-service requests, 32 resources. **15 data structures and 8 algorithms implemented from
-scratch**, with no `java.util` collections: priority scheduling, Dijkstra routing,
-BFS/DFS reachability, Prim and Kruskal, and budget-constrained selection.
-
-<sub>Java · SQLite &nbsp;—&nbsp; group project, TEAM ATLAS · DCIT 204/308</sub>
-
-[**View repository →**](https://github.com/Macpaul26/TEAM-ATLAS-GROUP-25-)
+<a href="https://github.com/Macpaul26/dev-orchestrator"><img src="https://raw.githubusercontent.com/Macpaul26/Macpaul26/main/assets/icons/arrow.svg" width="16" alt=""> <b>View repository</b></a>
 
 ---
 
-## 04 · Technical focus
+## <img src="https://raw.githubusercontent.com/Macpaul26/Macpaul26/main/assets/icons/cube.svg" width="20" alt=""> Engineering
 
-| Area | Working with |
-| :--- | :--- |
-| **Languages** | TypeScript, Java, Python |
-| **AI systems** | Anthropic SDK, LangGraph, tool and capability design, Zod-typed boundaries |
-| **Frontend** | React, Vite, Tailwind CSS, Radix UI, TanStack Query, Framer Motion |
-| **Backend & data** | Node.js, SQLite, Supabase / PostgreSQL |
-| **Testing & quality** | Vitest, Playwright, Testing Library, ESLint, strict TypeScript |
+<img src="https://raw.githubusercontent.com/Macpaul26/Macpaul26/main/assets/icons/brackets.svg" width="15" alt=""> &nbsp;**Languages** &nbsp;·&nbsp; <sub>TypeScript &nbsp;·&nbsp; JavaScript &nbsp;·&nbsp; Java &nbsp;·&nbsp; Python</sub>
 
-<sub>Every tool listed here appears in a repository I have actually shipped code into.</sub>
+<img src="https://raw.githubusercontent.com/Macpaul26/Macpaul26/main/assets/icons/window.svg" width="15" alt=""> &nbsp;**Frontend** &nbsp;·&nbsp; <sub>React &nbsp;·&nbsp; Vite &nbsp;·&nbsp; Tailwind CSS &nbsp;·&nbsp; Radix UI</sub>
+
+<img src="https://raw.githubusercontent.com/Macpaul26/Macpaul26/main/assets/icons/database.svg" width="15" alt=""> &nbsp;**Backend & data** &nbsp;·&nbsp; <sub>Node.js &nbsp;·&nbsp; SQLite &nbsp;·&nbsp; PostgreSQL</sub>
+
+<img src="https://raw.githubusercontent.com/Macpaul26/Macpaul26/main/assets/icons/shield.svg" width="15" alt=""> &nbsp;**Practice** &nbsp;·&nbsp; <sub>Vitest &nbsp;·&nbsp; Playwright &nbsp;·&nbsp; ESLint &nbsp;·&nbsp; Git &nbsp;·&nbsp; strict TypeScript</sub>
 
 ---
 
-## 05 · Current direction
+## <img src="https://raw.githubusercontent.com/Macpaul26/Macpaul26/main/assets/icons/compass.svg" width="20" alt=""> Currently building
 
-**Learning from verified experience.** Getting the orchestrator to improve its own
-planning and verification from outcomes it confirmed itself — never from what an agent
-claimed. The store is built and deliberately unwired; a test asserts that no production
-module imports it yet.
+Extending **dev-orchestrator** so it can learn from outcomes it verified itself.
+The store is built and deliberately unwired — a test asserts no production module
+imports it yet.
 
-**Holding the authority boundary.** Learning informs reasoning and never becomes
-authority. A lesson drawn from a hundred verified runs still cannot approve a plan, grant
-a capability, widen a scope, or disable a check.
-
-**Design as engineering.** Pushing the interface layer of my product work toward
-something closer to editorial design than to framework defaults.
+Alongside it: full-stack TypeScript, and getting better at the interface layer.
 
 ---
 
-## 06 · How I work
+## <img src="https://raw.githubusercontent.com/Macpaul26/Macpaul26/main/assets/icons/compass2.svg" width="20" alt=""> How I work
 
-- **I review my own merged work.** The concurrency quota above was rewritten after a
-  second pass found two ways it could fail under simultaneous writers — neither of them
-  visible to a single-threaded test, which is exactly why the original suite passed.
-- **Architecture gets written before it gets built.** Each milestone has a phase document
-  that states plainly what is guaranteed today and what is deferred.
-- **Tests describe guarantees, not implementations.** Where a boundary matters, there is a
-  test asserting the boundary itself — including tests that fail if the wrong module ever
-  imports another.
+**Boundaries before features.** If a limit matters, there is a test that fails when it moves.
+
+**Evidence over assertion.** Something reporting success is a claim, not a result.
+
+**Review my own merged work.** The quota above was rewritten after a second pass
+found two failures a single-threaded test could never have caught.
 
 ---
-
-## 07 · Contact
 
 <div align="center">
 
-[**Email**](mailto:mappiahadu@gmail.com) &nbsp;·&nbsp;
-[**LinkedIn**](https://www.linkedin.com/in/macpaul-appiah-adu-9a73ab35a) &nbsp;·&nbsp;
-[**GitHub**](https://github.com/Macpaul26?tab=repositories)
+<br>
+
+<a href="mailto:mappiahadu@gmail.com"><img src="https://raw.githubusercontent.com/Macpaul26/Macpaul26/main/assets/icons/mail.svg" width="17" alt=""> <b>Email</b></a>
+&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;
+<a href="https://www.linkedin.com/in/macpaul-appiah-adu-9a73ab35a"><img src="https://raw.githubusercontent.com/Macpaul26/Macpaul26/main/assets/icons/linkedin.svg" width="17" alt=""> <b>LinkedIn</b></a>
+&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;
+<a href="https://github.com/Macpaul26?tab=repositories"><img src="https://raw.githubusercontent.com/Macpaul26/Macpaul26/main/assets/icons/brackets.svg" width="17" alt=""> <b>Repositories</b></a>
 
 <br>
 
-<sub>Ghana · Always open to a conversation about AI systems, verification, or good interfaces.</sub>
+<sub>Ghana · Open to a conversation about system design, TypeScript, or good interfaces.</sub>
 
 </div>

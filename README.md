@@ -1,163 +1,165 @@
-```
-     ___  ___          ___       _   _ _   
-    |  \/  |         / _ \     | | | | |  
-    | .  . | __ _  _| /_\ |___ | |_| | |  
-    | |\/| |/ _` |/ __) |  _ `/ \_/ \ | |  
-    | |  | | (_| | (__ /  | | | __ /| \/  
-    |_|  |_|\__,_|\___|   |_| |_||_|_/\_| 
-                                          
-         🤖 AI Developer & Web Architect
-```
-
-### Building Intelligent Solutions Through Code & AI
-
 <div align="center">
 
-**Next-gen AI agents that think, learn, and ship better code**
+# Macpaul Noble Appiah-Adu
 
-[![GitHub followers](https://img.shields.io/github/followers/Macpaul26?style=social&label=Follow)](https://github.com/Macpaul26?tab=followers)
+<samp>SOFTWARE&nbsp;ENGINEER&nbsp;&nbsp;·&nbsp;&nbsp;AI&nbsp;SYSTEMS&nbsp;&nbsp;·&nbsp;&nbsp;INTERFACE&nbsp;DESIGN</samp>
 
-[dev-orchestrator](https://github.com/Macpaul26/dev-orchestrator) • [My Repos](https://github.com/Macpaul26?tab=repositories) • [Let's Talk](#-lets-connect)
+<br>
+
+**I build systems that verify their own work.**
+
+Most of my time goes to an AI development orchestrator that plans, gates on human
+approval, delegates the work — then inspects the repository itself rather than
+trusting the report it was handed.
+
+<br>
+
+[**dev-orchestrator**](https://github.com/Macpaul26/dev-orchestrator) &nbsp;·&nbsp;
+[**Repositories**](https://github.com/Macpaul26?tab=repositories) &nbsp;·&nbsp;
+[**LinkedIn**](https://www.linkedin.com/in/macpaul-appiah-adu-9a73ab35a) &nbsp;·&nbsp;
+[**Email**](mailto:mappiahadu@gmail.com)
+
+<sub>Computer Science · University of Ghana, Legon</sub>
 
 </div>
 
 ---
 
-## 🔥 What I Do
+## 01 · What I build
 
-```
-┌──────────────────────────────────────────────┐
-│  🤖 AI & Autonomous Agent Development       │
-│  💻 Full-Stack Web Development               │
-│  📊 Data Science & Analytics                 │
-│  🧠 Machine Learning & Deep Learning         │
-└──────────────────────────────────────────────┘
-```
+I work where AI systems meet real software engineering. The interesting problem there
+isn't getting a model to produce code — it's deciding what to trust once it has.
 
-I'm passionate about the intersection of **automation, intelligence, and elegant code**. My goal? Create AI tools that empower developers to ship better solutions, faster.
+That question shapes how I build everything else: typed boundaries, narrow capabilities,
+tests that describe guarantees rather than implementations, and interfaces quiet enough
+that people actually use them.
 
----
-
-## 🚀 Flagship Project: dev-orchestrator
-
-**A general-purpose AI Development Orchestrator that plans, gates on human approval, delegates implementation, and independently verifies changes.**
-
-<table align="center">
-<tr>
-<td align="center">📋<br/><strong>Plans</strong><br/>Intelligent workflow breakdown</td>
-<td align="center">✅<br/><strong>Human-In-The-Loop</strong><br/>Approval gates for safety</td>
-<td align="center">🔨<br/><strong>Delegates</strong><br/>Autonomous implementation</td>
-<td align="center">🔍<br/><strong>Verifies</strong><br/>Independent verification</td>
-</tr>
-</table>
-
-🔗 **[View Repository](https://github.com/Macpaul26/dev-orchestrator)**
+Three things hold my attention — **agent architecture and verification**, **full-stack
+TypeScript**, and **the design layer** that most engineers skip.
 
 ---
 
-## 💪 Tech Arsenal
+## 02 · Flagship
+
+### dev-orchestrator
+
+**A general-purpose AI development orchestrator that never takes an agent's word for it.**
+
+> The coding agent's report is never authoritative.
+
+It loads project context, plans, gates on human approval, delegates implementation to a
+coding agent, and then establishes for itself what changed. An agent reporting success is
+producing a *claim*, not evidence — so the two are kept structurally apart:
+`ImplementationReport` carries `claimed*` and `observed*` fields, and there is no code
+path that writes a claim into an observation.
+
+**What I built**
+
+- **A controlled tool bridge.** The coding agent touches a repository only through four
+  typed, grant-bound operations — never a raw filesystem API. The request protocol has no
+  field for a grant, project, session, scope or budget, so authority is not something the
+  agent can name.
+- **Read-only repository evidence.** Metadata, status, changed paths and bounded file
+  excerpts, exposed through a closed set of operations rather than open access.
+- **Tamper-evident experience storage.** Project-isolated records that survive a restart,
+  are ordered and paged from filenames rather than by parsing the whole corpus, and are
+  refused on read if corrupt or filed under the wrong project.
+- **A quota that holds under concurrent writers.** Writes serialize through a
+  cross-process lock and the count is derived from the records inside that lock — a
+  directory too large to scan completely refuses the write instead of trusting a partial
+  count.
+
+**Stack** — TypeScript (strict) · Node 22 · LangGraph · Anthropic SDK · Zod · Vitest · SQLite checkpointing
+
+<sub>31 test suites · 16 source modules · 13 phase documents · ships as a <code>dev-agent</code> CLI</sub>
+
+[**View repository →**](https://github.com/Macpaul26/dev-orchestrator)
+
+---
+
+## 03 · Selected work
+
+### Newbreed — campus ministry website
+
+An editorial site for the ICGC campus ministry at the University of Ghana, built around a
+content-integrity policy: the site is not allowed to claim something the church hasn't
+said. Routed React app with a real design system rather than component defaults.
+
+<sub>React · Vite · TypeScript · Tailwind · Radix UI · TanStack Query · Framer Motion · Playwright · Vitest &nbsp;—&nbsp; **private repository**</sub>
+
+### God-man Classics — storefront and admin
+
+A commerce project on TanStack Start with Supabase behind it — catalogue, cart, and an
+admin surface for managing stock.
+
+<sub>TanStack Start · Supabase · Tailwind v4 · Radix UI · TypeScript &nbsp;—&nbsp; **private repository**</sub>
+
+### Ghana Smart Service Operations Optimizer
+
+Campus maintenance triage over a real SQLite database — 56 locations, 140 roads, 320
+service requests, 32 resources. **15 data structures and 8 algorithms implemented from
+scratch**, with no `java.util` collections: priority scheduling, Dijkstra routing,
+BFS/DFS reachability, Prim and Kruskal, and budget-constrained selection.
+
+<sub>Java · SQLite &nbsp;—&nbsp; group project, TEAM ATLAS · DCIT 204/308</sub>
+
+[**View repository →**](https://github.com/Macpaul26/TEAM-ATLAS-GROUP-25-)
+
+---
+
+## 04 · Technical focus
+
+| Area | Working with |
+| :--- | :--- |
+| **Languages** | TypeScript, Java, Python |
+| **AI systems** | Anthropic SDK, LangGraph, tool and capability design, Zod-typed boundaries |
+| **Frontend** | React, Vite, Tailwind CSS, Radix UI, TanStack Query, Framer Motion |
+| **Backend & data** | Node.js, SQLite, Supabase / PostgreSQL |
+| **Testing & quality** | Vitest, Playwright, Testing Library, ESLint, strict TypeScript |
+
+<sub>Every tool listed here appears in a repository I have actually shipped code into.</sub>
+
+---
+
+## 05 · Current direction
+
+**Learning from verified experience.** Getting the orchestrator to improve its own
+planning and verification from outcomes it confirmed itself — never from what an agent
+claimed. The store is built and deliberately unwired; a test asserts that no production
+module imports it yet.
+
+**Holding the authority boundary.** Learning informs reasoning and never becomes
+authority. A lesson drawn from a hundred verified runs still cannot approve a plan, grant
+a capability, widen a scope, or disable a check.
+
+**Design as engineering.** Pushing the interface layer of my product work toward
+something closer to editorial design than to framework defaults.
+
+---
+
+## 06 · How I work
+
+- **I review my own merged work.** The concurrency quota above was rewritten after a
+  second pass found two ways it could fail under simultaneous writers — neither of them
+  visible to a single-threaded test, which is exactly why the original suite passed.
+- **Architecture gets written before it gets built.** Each milestone has a phase document
+  that states plainly what is guaranteed today and what is deferred.
+- **Tests describe guarantees, not implementations.** Where a boundary matters, there is a
+  test asserting the boundary itself — including tests that fail if the wrong module ever
+  imports another.
+
+---
+
+## 07 · Contact
 
 <div align="center">
 
-### Languages & Frameworks
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+[**Email**](mailto:mappiahadu@gmail.com) &nbsp;·&nbsp;
+[**LinkedIn**](https://www.linkedin.com/in/macpaul-appiah-adu-9a73ab35a) &nbsp;·&nbsp;
+[**GitHub**](https://github.com/Macpaul26?tab=repositories)
 
-### Frontend & Full-Stack
-![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
+<br>
 
-### Backend & Infrastructure
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-
-### AI & ML
-![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
-![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
-![Hugging Face](https://img.shields.io/badge/HuggingFace-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)
-
-### Databases & Tools
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-13AA52?style=for-the-badge&logo=mongodb&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+<sub>Ghana · Always open to a conversation about AI systems, verification, or good interfaces.</sub>
 
 </div>
-
----
-
-## 📊 GitHub Analytics
-
-<div align="center">
-
-![Macpaul26's GitHub stats](https://github-readme-stats.vercel.app/api?username=Macpaul26&show_icons=true&theme=tokyonight&hide_border=true&bg_color=1a1b27)
-
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Macpaul26&layout=compact&theme=tokyonight&hide_border=true&bg_color=1a1b27)
-
-![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=Macpaul26&theme=tokyonight&hide_border=true&background=1a1b27)
-
-</div>
-
----
-
-## 🎯 What I'm Exploring
-
-<div align="center">
-
-| Focus Area | What I'm Working On |
-|-----------|-------------------|
-| 🧠 **Advanced AI** | LLM fine-tuning & prompt engineering |
-| 🤝 **Multi-Agent** | Collaborative agent systems |
-| ⚡ **Real-Time** | High-performance data pipelines |
-| 🔐 **Intelligent Security** | AI-powered threat detection |
-
-</div>
-
----
-
-## 💡 Recent Highlights
-
-- 🚀 Building **dev-orchestrator** — the future of AI-assisted development
-- 📚 Deep diving into multi-agent LLM architectures
-- 🔬 Experimenting with self-improving systems
-- 🌐 Creating tools that bridge AI and web development
-
----
-
-## 🤝 Let's Connect!
-
-<div align="center">
-
-[![Email (Personal)](https://img.shields.io/badge/Email%20(Personal)-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:mappiahadu@gmail.com)
-[![Email (Student)](https://img.shields.io/badge/Email%20(Student)-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:mpnappiah-adu@st.ug.edu.gh)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/macpaul-appiah-adu-9a73ab35a/)
-[![Discord](https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discordapp.com/users/)
-
-</div>
-
----
-
-## 📈 Fun Stats
-
-<div align="center">
-
-![Commits per year](https://img.shields.io/badge/Total%20Repos-12-brightgreen?style=flat-square)
-![Open Source](https://img.shields.io/badge/Open%20Source-Lover-brightgreen?style=flat-square)
-![Currently Learning](https://img.shields.io/badge/Currently%20Learning-Advanced%20LLMs-blue?style=flat-square)
-
-</div>
-
----
-
-<div align="center">
-
-### ⭐ If you find my work interesting, feel free to star my repos! ⭐
-
-**Let's build something extraordinary together** 🚀
-
-*Last updated: September 2026*
-
-</div>
-```

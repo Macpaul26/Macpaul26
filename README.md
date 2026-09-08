@@ -28,6 +28,8 @@ and interfaces that stay out of the way.
 &nbsp;&nbsp;&nbsp;
 <img src="https://raw.githubusercontent.com/Macpaul26/Macpaul26/main/assets/icons/window.svg" width="15" alt=""> Interface
 &nbsp;&nbsp;&nbsp;
+<img src="https://raw.githubusercontent.com/Macpaul26/Macpaul26/main/assets/icons/flow.svg" width="15" alt=""> AI systems
+&nbsp;&nbsp;&nbsp;
 <img src="https://raw.githubusercontent.com/Macpaul26/Macpaul26/main/assets/icons/terminal.svg" width="15" alt=""> Tooling
 
 <br>
@@ -44,7 +46,7 @@ and interfaces that stay out of the way.
 
 ## dev-orchestrator
 
-**Development work, coordinated across projects — planned, approved by a human,<br>then verified against what the repository actually shows.**
+**An AI coding agent, put on rails — work planned, approved by a human, delegated,<br>then verified against what the repository actually shows.**
 
 </div>
 
@@ -89,7 +91,7 @@ fields separately, and no code path can write one into the other.
 - Tamper-evident, project-isolated storage that refuses corrupt or misfiled records on read
 - A write quota that holds under concurrent writers, via a cross-process lock
 
-<sub><b>Built with</b></sub>&nbsp;&nbsp;TypeScript (strict) · Node 22 · LangGraph · Zod · Vitest · SQLite
+<sub><b>Built with</b></sub>&nbsp;&nbsp;TypeScript (strict) · Node 22 · LangGraph · Anthropic SDK · Zod · Vitest · SQLite
 
 <sub>31 test suites · 16 source modules · 13 phase documents</sub>
 
@@ -100,6 +102,8 @@ fields separately, and no code path can write one into the other.
 ## <img src="https://raw.githubusercontent.com/Macpaul26/Macpaul26/main/assets/icons/cube.svg" width="20" alt=""> Engineering
 
 <img src="https://raw.githubusercontent.com/Macpaul26/Macpaul26/main/assets/icons/brackets.svg" width="15" alt=""> &nbsp;**Languages** &nbsp;·&nbsp; <sub>TypeScript &nbsp;·&nbsp; JavaScript &nbsp;·&nbsp; Java &nbsp;·&nbsp; Python</sub>
+
+<img src="https://raw.githubusercontent.com/Macpaul26/Macpaul26/main/assets/icons/flow.svg" width="15" alt=""> &nbsp;**AI systems** &nbsp;·&nbsp; <sub>LLM agents &nbsp;·&nbsp; Anthropic SDK &nbsp;·&nbsp; LangGraph &nbsp;·&nbsp; tool &amp; capability design</sub>
 
 <img src="https://raw.githubusercontent.com/Macpaul26/Macpaul26/main/assets/icons/window.svg" width="15" alt=""> &nbsp;**Frontend** &nbsp;·&nbsp; <sub>React &nbsp;·&nbsp; Vite &nbsp;·&nbsp; Tailwind CSS &nbsp;·&nbsp; Radix UI</sub>
 
